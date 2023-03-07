@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        height: 3000px;
+        display: flex;
+        margin: 40px;
+        justify-content: center;
+    }
+    .scrollx {
+        height: 5px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: tomato;
+    }
+</style>
+<body>
+    <h1>Scroll</h1>
+    <div class="scrollx">
+
+    </div>
+    <script>
+        let el = document.querySelector('.scrollx')
+        window.addEventListener('scroll',function () {
+            var Height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+            var Scroll = document.documentElement.scrollTop  ;
+            var scrollTop = (Scroll / Height) * 100
+            el.style.width = `${scrollTop}%` 
+        })
+    </script>
+</body>
+</html>
